@@ -5,31 +5,28 @@
         {% block content %}
         <section class="blog__area pt-120 pb-120">
             <div class="container">
-               {% for post in posts %}
                 <div class="row">
                     <div class="col-xl-8 col-lg-8">
                         <div class="blog__wrapper mr-50">
+
+                            {% for post in posts %}
                             <div class="blog__item-2 mb-50 fix">
                                 <div class="blog__thumb-2 fix">
-                                    <a href="blog-details.html">
-                                        <img src="{% static 'assets/img/blog/blog-2.jpg' %}" alt="">
-                                    </a>
+                                    <a href="blog-details.html"><img src="{{post.banner.url}}" alt=""></a>
                                 </div>
                                 <div class="blog__content-2">
                                     <div class="blog__meta-2 mb-15 d-sm-flex align-items-center">
                                         <div class="blog__user pr-20 mr-20">
                                             <a href="#">
                                                 <img src="{% static 'assets/img/blog/user/user-1.jpg' %}" alt="">
-                                                <h6{{post.author}}</h6>
+                                                <h6>{{post.author}}</h6>
                                             </a>
                                         </div>
                                         <div class="blog__date">
                                             <span>{{post.created_date}}</span>
                                         </div>
                                     </div>
-                                    <h3>
-                                        <a href="blog-details.html">{{post.title}}</a>
-                                    </h3>
+                                    <h3><a href="blog-details.html">{{post.title}}</a></h3>
                                     <p>{{post.body}}</p>
                                     <div class="blog__btn d-sm-flex justify-content-between">
                                         <div class="blog__btn">
@@ -48,9 +45,12 @@
                                     </div>
                                 </div>
                             </div>
-                          
+
                             {% endfor %}
 
+                           
+                           
+                            
                             <div class="basic-pagination">
                                 <ul>
                                     <li>
@@ -100,70 +100,73 @@
                                     <div class="search">
                                         <form action="#">
                                             <input type="text" placeholder="Search...">
-                                            <button type="submit">
-                                                <i class="far fa-search"></i>
-                                            </button>
+                                            <button type="submit"><i class="far fa-search"></i></button>
                                         </form>
                                     </div>
                                 </div>
                             </div>
-                            <div class="sidebar__widget mb-75" Style="text-align:right;float:right;">
+                            <div class="sidebar__widget mb-75">
                                 <div class="sidebar__widget-title mb-50">
-                                    <h4>آخرین اخبار</h4>
+                                    <h4>Recent News</h4>
                                 </div>
                                 <div class="sidebar__widget-content">
                                     <div class="rs-post">
                                         <ul>
                                             <li class="d-flex mb-20 align-items-center">
                                                 <div class="rs-thumb mr-15">
-                                                    <a href="blog-details.html">
-                                                        <img src="{% static 'assets/img/blog/rn-1.jpg' %}" alt="rs-post">
-                                                    </a>
+                                                    <a href="blog-details.html"><img src="assets/img/blog/rn-1.jpg"
+                                                            alt="rs-post"></a>
                                                 </div>
                                                 <div class="rs-text">
-                                                    <h6>
-                                                        <a href="blog-details.html">افزایش قیمت خودرو</a>
-                                                    </h6>
-                                                    <div class="rs-meta">
-                                                        <span>March 04, 2020</span>
-                                                    </div>
+                                                    <h6><a href="blog-details.html">Best website traffice Booster with
+                                                            great tools.</a></h6>
+                                                    <div class="rs-meta"><span>March 04, 2020</span> </div>
                                                 </div>
                                             </li>
                                             <li class="d-flex mb-20 align-items-center">
                                                 <div class="rs-thumb mr-15">
-                                                    <a href="blog-details.html">
-                                                        <img src="assets/img/blog/rn-2.jpg" alt="rs-post">
-                                                    </a>
+                                                    <a href="blog-details.html"><img src="assets/img/blog/rn-2.jpg"
+                                                            alt="rs-post"></a>
                                                 </div>
                                                 <div class="rs-text">
-                                                    <h6>
-                                                        <a href="blog-details.html">عدم تغییر ساعت</a>
-                                                    </h6>
-                                                    <div class="rs-meta">
-                                                        <span>March 02, 2020</span>
-                                                    </div>
+                                                    <h6><a href="blog-details.html">Google take latest step & Catch the
+                                                            black SEO</a></h6>
+                                                    <div class="rs-meta"><span>March 02, 2020</span> </div>
                                                 </div>
                                             </li>
                                             <li class="d-flex mb-20 align-items-center">
                                                 <div class="rs-thumb mr-15">
-                                                    <a href="blog-details.html">
-                                                        <img src="{% static 'assets/img/blog/rn-3.jpg' %}" alt="rs-post">
-                                                    </a>
+                                                    <a href="blog-details.html"><img src="assets/img/blog/rn-3.jpg"
+                                                            alt="rs-post"></a>
                                                 </div>
                                                 <div class="rs-text">
-                                                    <h6>
-                                                        <a href="blog-details.html">فرق هاب و سوئیچ</a>
-                                                    </h6>
-                                                    <div class="rs-meta">
-                                                        <span>March 01, 2020</span>
-                                                    </div>
+                                                    <h6><a href="blog-details.html">How to become a best sale marketer
+                                                            in a year!</a></h6>
+                                                    <div class="rs-meta"><span>March 01, 2020</span> </div>
                                                 </div>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                           {% include "partials/sidebarcategory.html" %}
+                            <div class="sidebar__widget mb-75">
+                                <div class="sidebar__widget-title mb-50">
+                                    <h4>Categories</h4>
+                                </div>
+                                <div class="sidebar__widget-content">
+                                    <div class="cat-link">
+                                        <ul>
+                                            <li><a href="blog-details.html">Web Design (6)</a></li>
+                                            <li><a href="blog-details.html"> Web Development (14)</a></li>
+                                            <li><a href="blog-details.html">Graphics (12)</a></li>
+                                            <li><a href="blog-details.html">IOS/Android Design (10)</a></li>
+                                            <li><a href="blog-details.html">App & Saas (4)</a></li>
+                                            <li><a href="blog-details.html">Fresh Products (9)</a></li>
+                                            <li><a href="blog-details.html">Saas Design (8)</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="sidebar__widget mb-60">
                                 <div class="sidebar__widget-title mb-50">
                                     <h4>Recent Comments</h4>
