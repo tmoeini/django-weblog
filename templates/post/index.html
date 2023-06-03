@@ -5,6 +5,7 @@
         {% block content %}
         <section class="blog__area pt-120 pb-120">
             <div class="container">
+               {% for post in posts %}
                 <div class="row">
                     <div class="col-xl-8 col-lg-8">
                         <div class="blog__wrapper mr-50">
@@ -19,17 +20,17 @@
                                         <div class="blog__user pr-20 mr-20">
                                             <a href="#">
                                                 <img src="{% static 'assets/img/blog/user/user-1.jpg' %}" alt="">
-                                                <h6>طاهره معینی</h6>
+                                                <h6{{post.author}}</h6>
                                             </a>
                                         </div>
                                         <div class="blog__date">
-                                            <span>1 فروردین 1402</span>
+                                            <span>{{post.created_date}}</span>
                                         </div>
                                     </div>
                                     <h3>
-                                        <a href="blog-details.html">عدم تغییر ساعت ها در سال 1402</a>
+                                        <a href="blog-details.html">{{post.title}}</a>
                                     </h3>
-                                    <p>در سال جدید شمسی  بر خلاف سال های قبل ساعت ها به جلو کشیده نشد[...]</p>
+                                    <p>{{post.body}}</p>
                                     <div class="blog__btn d-sm-flex justify-content-between">
                                         <div class="blog__btn">
                                             <a href="blog-details.html#read-more" class="link-btn-2">
@@ -47,173 +48,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="blog__item-2 mb-50 fix">
-                                <div class="blog__thumb-2 fix p-relative">
-                                    <a href="blog-details.html">
-                                        <img src="{% static 'assets/img/blog/blog-3.jpg' %}" alt="">
-                                    </a>
-                                    <div class="blog__play p-absolute">
-                                        <a class="popup-video" href="https://youtu.be/v6E4GLDy1NU" data-fancybox><i class="fal fa-play"></i></a>
-                                    </div>
-                                </div>
-                                <div class="blog__content-2">
-                                    <div class="blog__meta-2 mb-15 d-sm-flex align-items-center">
-                                        <div class="blog__user pr-20 mr-20">
-                                            <a href="#">
-                                                <img src="{% static 'assets/img/blog/user/user-2.jpg' %}" alt="">
-                                                <h6>طاهره معینی</h6>
-                                            </a>
-                                        </div>
-                                        <div class="blog__date">
-                                            <span>30 فروردین 1402</span>
-                                        </div>
-                                    </div>
-                                    <h3>
-                                        <a href="blog-details.html">افزایش قیمت خودروهای داخلی</a>
-                                    </h3>
-                                    <p>در سال جدید همزمان با اعلام اولویت بندی سایت یکپارچه سازی قیمت خودروهای داخلی نیز افزایش یافت</p>
-                                    <div class="blog__btn d-sm-flex justify-content-between">
-                                        <div class="blog__btn">
-                                            <a href="blog-details.html#read-more" class="link-btn-2">
-                                                بیشتر
-                                                <i class="fal fa-long-arrow-right"></i>
-                                                <i class="fal fa-long-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                        <div class="blog__comment">
-                                            <a href="blog-details.html#comments">
-                                                <i class="far fa-comments"></i>
-                                                دیدگاه ها
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog__quote mb-50 p-relative white-bg fix">
-                                <div class="blog__quote-line">
-                                    <img class="line-1"
-                                         src="{% static 'assets/img/icon/blog/line-1.png' %}"
-                                         alt="">
-                                    <img class="line-2"
-                                         src="{% static 'assets/img/icon/blog/line-2.png' %}"
-                                         alt="">
-                                </div>
-                                <div class="quote mb-10">
-                                    <i class="fal fa-quote-right"></i>
-                                </div>
-                                <div class="quote-2 p-absolute">
-                                    <img src="{% static 'assets/img/icon/blog/quote-2.png' %}" alt="">
-                                </div>
-                                <blockquote>
-                                    <p>
-                                        لورم اپسواز اين به بعد تصميم گرفتم حداقل هر هفته يه پست بدم و اون پست هم چيز تازه اي باشه كه من تو اون هفته ياد گرفتم .شايد اين يه انگيزه اي باشه براي من تا بيشتر ياد بگيرم نظر شما درباره اين طريقه ايجاد كردن انگيزه چيه؟م
-                                    </p>
-                                </blockquote>
-                                <h4>Sarowar Jahan</h4>
-                            </div>
-                            <div class="blog__item-2 mb-50 fix">
-                                <div class="blog__thumb-2 fix p-relative">
-                                    <a href="blog-details.html">
-                                        <img src="{% static 'assets/img/blog/blog-4.jpg' %}" alt="">
-                                    </a>
-                                </div>
-                                <div class="blog__content-2">
-                                    <div class="blog__meta-2 mb-15 d-sm-flex align-items-center">
-                                        <div class="blog__user pr-20 mr-20">
-                                            <a href="#">
-                                                <img src="{% static 'assets/img/blog/user/user-3.jpg' %}" alt="">
-                                                <h6>سمانه معینی</h6>
-                                            </a>
-                                        </div>
-                                        <div class="blog__date">
-                                            <span>29 فروردین</span>
-                                        </div>
-                                    </div>
-                                    <h3>
-                                        <a href="blog-details.html">فرق هاب،سوئيچ و روتر</a>
-                                    </h3>
-                                    <p>
-                                        تو روند تحقيقات شبكه ايم با چند تا اصطلاح آشنا شدم
-                                        اينكه هاب يه وسيله سخت افزاريه كه كه چند تا پورت داره كه فقط كافيه اين هاب رو به پريز برق وصل كني و كامپيوتر ها رو به پرت هاي اون . وقتي داده هاي يه كامپيوتر كه به صورت پاكت (packet) هستن به هاب مي رسه
-                                    </p>
-                                    <div class="blog__btn d-sm-flex justify-content-between">
-                                        <div class="blog__btn">
-                                            <a href="blog-details.html#read-more" class="link-btn-2">
-                                                Read More
-                                                <i class="fal fa-long-arrow-right"></i>
-                                                <i class="fal fa-long-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                        <div class="blog__comment">
-                                            <a href="blog-details.html#comments">
-                                                <i class="far fa-comments"></i>
-                                                دیدگاه ها
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog__quote blog__quote-2 mb-50 p-relative white-bg fix">
-                                <div class="blog__quote-line">
-                                    <img class="line-3"
-                                         src="{% static 'assets/img/icon/blog/line-3.png' %}"
-                                         alt="">
-                                    <img class="line-4"
-                                         src="{% static 'assets/img/icon/blog/line-4.png' %}"
-                                         alt="">
-                                </div>
-                                <div class="blog__link-icon">
-                                    <i class="far fa-link icon_1"></i>
-                                    <i class="far fa-link icon_2"></i>
-                                </div>
-                                <p>
-                                    Oxford ruddy off his nut, bum bag is lavatory baking cakes bubble and squeak cheesed
-                                    off what a plonker.!
-                                </p>
-                            </div>
-                            <div class="blog__item-2 mb-50 fix">
-                                <div class="blog__thumb-2 fix p-relative">
-                                    <a href="blog-details.html">
-                                        <img src="{% static 'assets/img/blog/blog-5.jpg' %}" alt="">
-                                    </a>
-                                </div>
-                                <div class="blog__content-2">
-                                    <div class="blog__meta-2 mb-15 d-sm-flex align-items-center">
-                                        <div class="blog__user pr-20 mr-20">
-                                            <a href="#">
-                                                <img src="{% static 'assets/img/blog/user/user-4.jpg' %}" alt="">
-                                                <h6>Indigo Violet</h6>
-                                            </a>
-                                        </div>
-                                        <div class="blog__date">
-                                            <span>23 June 2020</span>
-                                        </div>
-                                    </div>
-                                    <h3>
-                                        <a href="blog-details.html">TikTok Influencer Marketing: How to Work With
-                                        Influencers</a>
-                                    </h3>
-                                    <p>
-                                        I don't want no agro say chimney pot plastered bamboozled arse Why dropped a
-                                        clanger cheeky bloke, Eaton crikey morish me old mucker cuppa[...]
-                                    </p>
-                                    <div class="blog__btn d-sm-flex justify-content-between">
-                                        <div class="blog__btn">
-                                            <a href="blog-details.html#read-more" class="link-btn-2">
-                                                Read More
-                                                <i class="fal fa-long-arrow-right"></i>
-                                                <i class="fal fa-long-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                        <div class="blog__comment">
-                                            <a href="blog-details.html#comments">
-                                                <i class="far fa-comments"></i>
-                                                Comments
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                          
+                            {% endfor %}
+
                             <div class="basic-pagination">
                                 <ul>
                                     <li>
