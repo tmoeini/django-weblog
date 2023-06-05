@@ -12,7 +12,7 @@
                             {% for post in posts %}
                             <div class="blog__item-2 mb-50 fix">
                                 <div class="blog__thumb-2 fix">
-                                    <a href="blog-details.html"><img src="{{post.banner.url}}" alt=""></a>
+                                    <a href="blog-details.html"><img src="{{post.banner.url}}" width="720" height="350" alt=""></a>
                                 </div>
                                 <div class="blog__content-2">
                                     <div class="blog__meta-2 mb-15 d-sm-flex align-items-center">
@@ -99,7 +99,7 @@
                                 <div class="sidebar__widget-content">
                                     <div class="search">
                                         <form action="#">
-                                            <input type="text" placeholder="Search...">
+                                            <input type="text" placeholder="جستجو...">
                                             <button type="submit"><i class="far fa-search"></i></button>
                                         </form>
                                     </div>
@@ -107,62 +107,42 @@
                             </div>
                             <div class="sidebar__widget mb-75">
                                 <div class="sidebar__widget-title mb-50">
-                                    <h4>Recent News</h4>
+                                    <h4>آخرین اخبار</h4>
                                 </div>
                                 <div class="sidebar__widget-content">
                                     <div class="rs-post">
                                         <ul>
+                                            {% for post in posts %}
+
                                             <li class="d-flex mb-20 align-items-center">
                                                 <div class="rs-thumb mr-15">
-                                                    <a href="blog-details.html"><img src="assets/img/blog/rn-1.jpg"
+                                                    <a href="blog-details.html"><img src="{{post.banner.url}}" width="80" height="90"
                                                             alt="rs-post"></a>
                                                 </div>
                                                 <div class="rs-text">
-                                                    <h6><a href="blog-details.html">Best website traffice Booster with
-                                                            great tools.</a></h6>
-                                                    <div class="rs-meta"><span>March 04, 2020</span> </div>
+                                                    <h6><a href="blog-details.html">{{post.title}}</a></h6>
+                                                    <div class="rs-meta"><span>{{post.created_date}}</span> </div>
                                                 </div>
                                             </li>
-                                            <li class="d-flex mb-20 align-items-center">
-                                                <div class="rs-thumb mr-15">
-                                                    <a href="blog-details.html"><img src="assets/img/blog/rn-2.jpg"
-                                                            alt="rs-post"></a>
-                                                </div>
-                                                <div class="rs-text">
-                                                    <h6><a href="blog-details.html">Google take latest step & Catch the
-                                                            black SEO</a></h6>
-                                                    <div class="rs-meta"><span>March 02, 2020</span> </div>
-                                                </div>
-                                            </li>
-                                            <li class="d-flex mb-20 align-items-center">
-                                                <div class="rs-thumb mr-15">
-                                                    <a href="blog-details.html"><img src="assets/img/blog/rn-3.jpg"
-                                                            alt="rs-post"></a>
-                                                </div>
-                                                <div class="rs-text">
-                                                    <h6><a href="blog-details.html">How to become a best sale marketer
-                                                            in a year!</a></h6>
-                                                    <div class="rs-meta"><span>March 01, 2020</span> </div>
-                                                </div>
-                                            </li>
+                                            {% endfor %}
+
+                                            
+                                            
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="sidebar__widget mb-75">
                                 <div class="sidebar__widget-title mb-50">
-                                    <h4>Categories</h4>
+                                    <h4>دسته بندی ها</h4>
                                 </div>
                                 <div class="sidebar__widget-content">
                                     <div class="cat-link">
                                         <ul>
-                                            <li><a href="blog-details.html">Web Design (6)</a></li>
-                                            <li><a href="blog-details.html"> Web Development (14)</a></li>
-                                            <li><a href="blog-details.html">Graphics (12)</a></li>
-                                            <li><a href="blog-details.html">IOS/Android Design (10)</a></li>
-                                            <li><a href="blog-details.html">App & Saas (4)</a></li>
-                                            <li><a href="blog-details.html">Fresh Products (9)</a></li>
-                                            <li><a href="blog-details.html">Saas Design (8)</a></li>
+                                            {% for cat in categories %}
+                                            <li><a href="blog-details.html">{{cat.name}}</a></li>
+                                            {% endfor %}
+                                            
                                         </ul>
                                     </div>
                                 </div>

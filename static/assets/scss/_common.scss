@@ -220,6 +220,7 @@ label {
 @for $i from 1 through 40 {
 	.mb-#{5 * $i} {
 		margin-bottom: 5px * $i;
+		text-align: right;
 	}
 }
 /*-- Margin Left --*/
